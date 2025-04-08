@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { REM } from 'next/font/google';
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 const rem = REM({
   subsets: ["latin"],
@@ -21,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={rem.className}>
-        <Navbar />
-        {children}
+        <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+          {children}
+        </main>
       </body>
     </html>
   );
