@@ -2,7 +2,7 @@ export const projects = [
     {
         title: "E-commerce",
         description: "Una tienda online completa con sistema de órdenes, pagos y panel de administrador.",
-        image: "/images/currency-exchange-screenshot.png",
+        image: "/images/exchange-screenshot.png",
         githubFrontend: "https://github.com/MaximoFC/Las-Amelias-E-Commerce-Front",
         githubBackend: "https://github.com/MaximoFC/Las-Amelias-E-Commerce-Back",
         demo: "",

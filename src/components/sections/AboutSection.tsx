@@ -6,7 +6,7 @@ export default function AboutSection() {
     return (
         <motion.section 
             id="about"
-            className="h-screen snap-start px-4 py-12 flex flex-col md:flex-row justify-between items-center gap-8"
+            className="h-screen snap-start px-4 py-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-slate-50"
         >
             <div className="h-full flex-1 flex flex-col px-6">
                 <h2 className="text-4xl font-bold mb-4 text-blue-500">Quién soy</h2>

@@ -6,7 +6,7 @@ export default function ContactSection() {
     return (
         <motion.section
             id="contact"
-            className="h-screen snap-start px-4 py-12 flex flex-col items-center justify-center bg-blue-50"
+            className="h-screen snap-start px-4 py-12 flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-blue-300"
         >
             <h2 className="text-4xl font-bold text-blue-500 mb-6 text-center">Contacto</h2>
             <p className="text-center text-muted-foreground max-w-xl mb-8">
