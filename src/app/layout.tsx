@@ -9,7 +9,7 @@ const rem = REM({
 
 export const metadata: Metadata = {
   title: "Máximo Facundo Callejas",
-  description: "Sitio personal y portfolio de proyectos",
+  description: "Sitio personal y portfolio de proyectos"
 };
 
 export default function RootLayout({
