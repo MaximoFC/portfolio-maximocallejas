@@ -6,11 +6,16 @@ export default function ContactSection() {
     return (
         <motion.section
             id="contact"
-            className="h-screen snap-start px-4 py-12 flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-blue-300"
+            className="h-screen snap-start px-4 py-12 flex flex-col items-center justify-center"
+            style={{
+                backgroundColor: "#eff6ff",
+                backgroundImage: 'url("/paper-3.png")',
+            }}
         >
             <h2 className="text-4xl font-bold text-blue-500 mb-6 text-center">Contacto</h2>
             <p className="text-center text-muted-foreground max-w-xl mb-8">
-                Si te interesa trabajar o colaborar conmigo, podés contactarte a través de este formulario o por redes sociales
+                Siempre estoy interesado en nuevas oportunidades y emprender proyectos. Si te interesa trabajar o colaborar conmigo, 
+                podés contactarte a través de este formulario o por redes sociales
             </p>
             <form 
                 action=""
