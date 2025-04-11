@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 
 const roles = [
     "Programador Universitario",
-    "Web Developer",
-    "(͠≖ ͜ʖ͠≖)👌"
+    "Web Developer"
 ];
 
 export default function TypeWriter() {
@@ -35,7 +34,7 @@ export default function TypeWriter() {
     }, [subIndex, index, deleting]);
 
     return (
-        <p className="text-gray-700 text-lg font-semibold md:text-lg max-w-xl mt-2 mb-10 h-[1.5rem]">
+        <p className="text-gray-700 text-2xl font-semibold md:text-2xl max-w-xl mt-2 mb-10 h-[1.5rem]">
             {text}
             <span className="border-r-2 border-gray-700 animate-pulse ml-1"></span>
         </p>

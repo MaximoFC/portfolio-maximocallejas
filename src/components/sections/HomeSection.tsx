@@ -3,18 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import TypeWriter from "../TypeWriter";
+import { motion } from "framer-motion";
 
 export default function HomeSection() {
   return (
     <section 
       id="home"
-      className="h-screen snap-start flex items-center justify-center px-4 bg-gradient-to-t from-slate-50 to-blue-300"
+      className="relative h-screen snap-start flex items-center justify-center px-4"
+      style={{
+        backgroundColor: "#eff6ff",
+        backgroundImage: 'url("/paper-3.png")',
+      }}
     >
       <div className="w-full text-center flex flex-col items-center gap-6">
         <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
           <div className="p-4 md:p-8 w-full md:max-w-2xl">
-            <h1 className="text-4xl font-bold text-blue-500">
-              Hola, soy <span className="text-black">Máximo Callejas</span>
+            <h1 className="text-5xl md:text-4xl font-bold text-blue-500">
+              Hola, soy <span className="text-black">Máximo</span>
             </h1>
             <TypeWriter />
             <div className="flex gap-4 justify-center mt-4 flex-wrap">
@@ -54,7 +59,7 @@ export default function HomeSection() {
                     cy="100"
                     r="80"
                     fill="none"
-                    stroke="#3b82f6"
+                    stroke="#0f172a"
                     strokeWidth="1"
                     strokeDasharray="20 5"
                   >
@@ -72,7 +77,7 @@ export default function HomeSection() {
                     cy="100"
                     r="90"
                     fill="none"
-                    stroke="#eff6ff"
+                    stroke="#3b82f6"
                     strokeWidth="1"
                     strokeDasharray="20 5"
                   >
@@ -100,6 +105,40 @@ export default function HomeSection() {
           </div>
         </div>
       </div>
+      <motion.div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-black drop-shadow-[0_0_5px_#3b82f6]"
+        initial={{ y: 0 }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="30,30 50,70 70,30"
+            fill="none"
+            stroke="#3b82f6"
+            strokeWidth="20"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <polyline
+            points="30,30 50,70 70,30"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </motion.div>
     </section>
   );
 }
