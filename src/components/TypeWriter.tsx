@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 
 const roles = [
     "Programador Universitario",
-    "Web Developer"
+    "Web Developer",
+    "Full Stack Jr."
 ];
 
 export default function TypeWriter() {

@@ -21,7 +21,7 @@ export default function ProjectCard({ title, description, image, githubFrontend,
                     fill
                 />
             </div>
-            <div className="p-4 flex flex-col gap-2">
+            <div className="p-4 flex flex-col gap-2 bg-white border-t-1 border-blue-500">
                 <h3 className="text-lg font-semibold">{title}</h3>
                 <p>{description}</p>
                 <div className="flex justify-around">
@@ -29,7 +29,7 @@ export default function ProjectCard({ title, description, image, githubFrontend,
                         <a 
                             href={githubFrontend} 
                             target="_blank"
-                            className="bg-white text-blue-500 px-2 py-2 rounded-lg border-2 border-blue-500 transition-all duration-300 hover:bg-gray-200 hover:scale-105">
+                            className="bg-white text-blue-500 px-2 py-2 rounded-lg border-2 border-blue-500 transition-all duration-150 hover:bg-gray-200 hover:scale-105">
                             FrontEnd
                         </a>
                     )}
@@ -37,12 +37,12 @@ export default function ProjectCard({ title, description, image, githubFrontend,
                         <a 
                             href={githubBackend}
                             target="_blank"
-                            className="bg-white text-blue-500 px-2 py-2 rounded-lg border-2 border-blue-500 transition-all duration-300 hover:bg-gray-200 hover:scale-105">
+                            className="bg-white text-blue-500 px-2 py-2 rounded-lg border-2 border-blue-500 transition-all duration-150 hover:bg-gray-200 hover:scale-105">
                             BackEnd
                         </a>
                     )}
                     {demo && (
-                        <a className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-blue-600 hover:scale-105">
+                        <a className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105">
                             <button>Demo</button>
                         </a>
                     )}

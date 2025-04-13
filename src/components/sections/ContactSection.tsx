@@ -6,7 +6,7 @@ export default function ContactSection() {
     return (
         <motion.section
             id="contact"
-            className="h-screen snap-start px-4 py-12 flex flex-col items-center justify-center"
+            className="h-screen snap-start snap-always px-4 py-12 flex flex-col items-center justify-center"
             style={{
                 backgroundColor: "#eff6ff",
                 backgroundImage: 'url("/paper-3.png")',
@@ -24,21 +24,21 @@ export default function ContactSection() {
                 <input 
                     type="text"
                     placeholder="Tu nombre"
-                    className="border border-gray-600 rounded px-4 py-2"
+                    className="border border-gray-600 rounded px-4 py-2 bg-white"
                 />
                 <input 
                     type="email"
                     placeholder="Tu correo"
-                    className="border border-gray-600 rounded px-4 py-2"
+                    className="border border-gray-600 rounded px-4 py-2 bg-white"
                 />
                 <textarea 
                     placeholder="Tu mensaje"
                     rows={5}
-                    className="border border-gray-600 rounded px-4 py-2"
+                    className="border border-gray-600 rounded px-4 py-2 bg-white"
                 />
                 <button
                     type="submit"
-                    className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+                    className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105 cursor-pointer"
                 >
                     Enviar
                 </button>

@@ -9,7 +9,7 @@ export default function HomeSection() {
   return (
     <section 
       id="home"
-      className="relative h-screen snap-start flex items-center justify-center px-4"
+      className="relative h-dvh snap-start flex items-center justify-center px-4"
       style={{
         backgroundColor: "#eff6ff",
         backgroundImage: 'url("/paper-3.png")',
@@ -26,21 +26,21 @@ export default function HomeSection() {
               <Link
                 href="#about"
                 aria-label="Sobre mi"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-blue-600 hover:scale-105"
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105"
               >
                 Sobre mi
               </Link>
               <Link
                 href="#projects"
                 aria-label="Ver mis proyectos"
-                className="bg-white text-blue-500 px-6 py-2 rounded-lg border-2 border-blue-500 transition-all duration-300 hover:bg-gray-200 hover:scale-105"
+                className="bg-white text-blue-500 px-6 py-2 rounded-lg border-2 border-blue-500 transition-all duration-150 hover:bg-gray-200 hover:scale-105"
               >
                 Ver mis proyectos
               </Link>
               <Link
                 href="#contact"
                 aria-label="Contactarme"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-blue-600 hover:scale-105"
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105"
               >
                 Contactarme
               </Link>
