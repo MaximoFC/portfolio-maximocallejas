@@ -29,7 +29,7 @@ export default function ScrollProgress() {
     }, []);
 
     return (
-        <div className="fixed top-1/2 -translate-y-1/2 right-2 h-1/4 w-4 z-50 bg-black rounded-lg p-1 flex items-start">
+        <div className="fixed top-1/2 -translate-y-1/2 right-2 h-1/4 w-4 z-50 bg-slate-500 rounded-lg p-1 flex items-start">
         <div
             className="w-full bg-white border-3 border-blue-500 transition-all duration-300 ease-out rounded-lg shadow-[0_0_5px_4px_rgba(59,130,246,0.7)]"
             style={{ height: `${progress}%` }}
