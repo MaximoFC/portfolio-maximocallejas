@@ -1,21 +1,32 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 type Project = {
     title: string,
     description: string,
-    image: string,
+    images: string[],
     githubFrontend?: string,
     githubBackend?: string,
     demo?: string
 };
 
-export default function ProjectCard({ title, description, image, githubFrontend, githubBackend, demo }: Project) {
+export default function ProjectCard({ title, description, images, githubFrontend, githubBackend, demo }: Project) {
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
     return (
         <div className="rounded-lg shadow-md overflow-hidden flex flex-col">
             <div className="relative h-40 w-full md:h-70 md:w-full">
                 <Image 
-                    src={image} 
-                    alt={title}
+                    src={images[currentImage]} 
+                    alt={`${title} screenshot ${currentImage + 1}`}
                     className="object-cover object-top"
                     priority
                     fill

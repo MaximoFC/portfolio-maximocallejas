@@ -51,7 +51,7 @@ export default function AboutSection() {
                         </motion.p>
                     </div>
                     <motion.div 
-                        className="bg-zinc-800 text-white rounded-4xl p-8 flex items-center flex-1 justify-center flex-col gap-8"
+                        className="bg-slate-800 text-white rounded-4xl p-8 flex items-center flex-1 justify-center flex-col gap-8"
                         variants={fadeUp(0.2)}
                         initial="hidden"
                         whileInView="visible"
