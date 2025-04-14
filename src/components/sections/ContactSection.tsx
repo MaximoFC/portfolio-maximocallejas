@@ -1,8 +1,52 @@
 'use client';
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ContactSection() {
+    type ContactFormData = {
+        name: string,
+        email: string,
+        message: string,
+        bot_field_823: string
+    };
+
+    const [formData, setFormData] = useState<ContactFormData>({
+        name: '',
+        email: '',
+        message: '',
+        bot_field_823: ''
+    });
+    const [sent, setSent] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true)
+
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        if(res.ok) {
+            setSent(true);
+            setFormData({ name: '', email: '', message: '', bot_field_823: '' });
+        } else {
+            const data = await res.json();
+            setError(data.error || "Error al enviar el mensaje");
+        }
+
+        setLoading(false);
+    };
+
     return (
         <motion.section
             id="contact"
@@ -17,32 +61,66 @@ export default function ContactSection() {
                 Siempre estoy interesado en nuevas oportunidades y emprender proyectos. Si te interesa trabajar o colaborar conmigo, 
                 podés contactarte a través de este formulario o por redes sociales
             </p>
-            <form 
-                action=""
+            {sent ? (
+                <p className="text-blue-500 text-lg">
+                    ¡Gracias por tu mensaje! Te responderé pronto.
+                </p>
+            ) : (
+                <form 
+                onSubmit={handleSubmit}
                 className="w-full max-w-md flex flex-col gap-4"
-            >
-                <input 
-                    type="text"
-                    placeholder="Tu nombre"
-                    className="border border-gray-600 rounded px-4 py-2 bg-white"
-                />
-                <input 
-                    type="email"
-                    placeholder="Tu correo"
-                    className="border border-gray-600 rounded px-4 py-2 bg-white"
-                />
-                <textarea 
-                    placeholder="Tu mensaje"
-                    rows={5}
-                    className="border border-gray-600 rounded px-4 py-2 bg-white"
-                />
-                <button
-                    type="submit"
-                    className="bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105 cursor-pointer"
                 >
-                    Enviar
-                </button>
-            </form>
+                    <input 
+                        type="text"
+                        name="name"
+                        placeholder="Tu nombre"
+                        className="border border-gray-600 rounded px-4 py-2 bg-white"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input 
+                        type="email"
+                        name="email"
+                        placeholder="Tu correo"
+                        className="border border-gray-600 rounded px-4 py-2 bg-white"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Tu mensaje"
+                        rows={5}
+                        className="border border-gray-600 rounded px-4 py-2 bg-white"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input 
+                        type="text"
+                        name="bot_field_823"
+                        className="sr-only"
+                        autoComplete="off"
+                        value={formData.bot_field_823}
+                        onChange={handleChange}
+                    />
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className={`px-6 py-2 rounded-lg transition-all duration-150 
+                            ${loading 
+                            ? "bg-blue-300 cursor-not-allowed" 
+                            : "bg-blue-500 hover:bg-blue-600 hover:scale-105 cursor-pointer"} 
+                            text-white`}
+                        >
+                            {loading ? "Enviando..." : "Enviar"}
+                    </button>
+                </form>
+            )}
+            {error && (
+                <p className="text-red-500 text-sm text-center">{error}</p>
+            )}
         </motion.section>
     );
 }
