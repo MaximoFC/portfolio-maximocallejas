@@ -1,13 +1,13 @@
 @import "tailwindcss";
+
 ::-webkit-scrollbar {
   display: none;
 }
 
 html, body {
-  scroll-behavior: smooth;
-  /* overflow-x: hidden; */
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .scroll-snap-type-y-mandatory {

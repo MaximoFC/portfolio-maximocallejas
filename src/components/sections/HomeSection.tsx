@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import TypeWriter from "../TypeWriter";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa"; 
+import { BiLogoGmail } from "react-icons/bi";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function HomeSection() {
   return (
@@ -22,6 +25,17 @@ export default function HomeSection() {
               Hola, soy <span className="text-black">Máximo</span>
             </h1>
             <TypeWriter />
+            <div className="flex justify-evenly pb-5">
+              <a href="https://linkedin.com/in/maximofcallejas" target="_blank" aria-label="LinkedIn">
+                <FaLinkedin className="text-blue-700 w-10 h-10 transition-all duration-150 hover:scale-110" />
+              </a>
+              <a href="mailto:maximofcallejas@gmail.com" aria-label="Gmail">
+                <BiLogoGmail className="text-red-600 w-10 h-10 transition-all duration-150 hover:scale-110" />
+              </a>
+              <a href="https://github.com/MaximoFC" target="_blank" aria-label="GitHub">
+                <FaGithub className="text-gray-800 w-10 h-10 transition-all duration-150 hover:scale-110" />
+              </a>
+            </div>
             <div className="flex gap-4 justify-center mt-4 flex-wrap">
               <Link
                 href="#about"
@@ -106,7 +120,7 @@ export default function HomeSection() {
         </div>
       </div>
       <motion.div
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-black drop-shadow-[0_0_5px_#3b82f6]"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2"
         initial={{ y: 0 }}
         animate={{ y: [0, 10, 0] }}
         transition={{
@@ -115,29 +129,7 @@ export default function HomeSection() {
           ease: "easeInOut",
         }}
       >
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polyline
-            points="30,30 50,70 70,30"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="20"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <polyline
-            points="30,30 50,70 70,30"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <IoIosArrowDown className="w-8 h-8 text-blue-500" />
       </motion.div>
     </section>
   );
