@@ -17,14 +17,21 @@ export default function ProjectsSection() {
                 backgroundImage: 'url("/paper-3.png")',
             }}
         >
-            <h2 className="text-4xl font-bold text-blue-500 text-center">
+            <motion.h2 
+                className="text-4xl font-bold text-blue-500 text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
                 Mis proyectos
-            </h2>
+            </motion.h2>
 
             <div className="w-full max-w-4xl flex flex-col items-center justify-center gap-6">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}
+                        layout
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -100 }}
@@ -44,6 +51,8 @@ export default function ProjectsSection() {
                                     ? "bg-blue-500 w-12"
                                     : "bg-blue-200 hover:bg-blue-400"
                             }`}
+                            aria-label={`Ver proyecto ${index + 1}`}
+                            aria-pressed={index === currentIndex}
                         />
                     ))}
                 </div>

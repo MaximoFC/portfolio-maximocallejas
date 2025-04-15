@@ -11,7 +11,34 @@ const rem = REM({
 
 export const metadata: Metadata = {
   title: "Máximo Facundo Callejas",
-  description: "Sitio personal y portfolio de proyectos"
+  description: "Desarrollador Web | Portfolio personal",
+  // metadataBase: new URL(""),
+  openGraph: {
+    title: "Máximo Facundo Callejas",
+    description: "Desarrollador Web | Portfolio personal",
+    // url: "",
+    siteName: "Máximo Callejas",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Imagen destacada de Máximo Callejas",
+      },
+    ],
+    locale: "es_AR",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Máximo Facundo Callejas",
+    description: "Desarrollador Web | Portfolio personal",
+    images: ["/og-image.png"],
+    creator: "@maxi_callejas",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

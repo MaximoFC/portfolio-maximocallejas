@@ -56,11 +56,25 @@ export default function ContactSection() {
                 backgroundImage: 'url("/paper-3.png")',
             }}
         >
-            <h2 className="text-4xl font-bold text-blue-500 mb-6 text-center">Contacto</h2>
-            <p className="text-center text-muted-foreground max-w-xl mb-8">
+            <motion.h2 
+                className="text-4xl font-bold text-blue-500 mb-6 text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}    
+            >
+                Contacto
+            </motion.h2>
+            <motion.p 
+                className="text-center text-muted-foreground max-w-xl mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+            >
                 Siempre estoy interesado en nuevas oportunidades y emprender proyectos. Si te interesa trabajar o colaborar conmigo, 
                 podés contactarte a través de este formulario o por redes sociales
-            </p>
+            </motion.p>
             {sent ? (
                 <p className="text-blue-500 text-lg">
                     ¡Gracias por tu mensaje! Te responderé pronto.

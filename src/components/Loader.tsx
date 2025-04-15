@@ -19,6 +19,8 @@ export default function Loader() {
             {showLoader && (
                 <motion.div
                     key="loader"
+                    role="status"
+                    aria-live="polite"
                     className="fixed inset-0 z-50 bg-blue-500 flex items-center justify-center text-white text-5xl font-bold"
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
