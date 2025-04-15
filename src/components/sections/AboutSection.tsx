@@ -18,15 +18,15 @@ export default function AboutSection() {
     return (
         <section 
             id="about"
-            className="min-h-dvh snap-start px-4 py-12 flex flex-col items-center gap-8"
+            className="snap-start px-4 py-12 flex flex-col items-center gap-8 h-dvh"
             style={{
                 backgroundColor: "#eff6ff",
                 backgroundImage: 'url("/paper-3.png")',
             }}
         >
-            <div className="flex flex-col gap-6 px-4 md:px-6 lg:px-12 items-center text-center md:text-left w-full">
+            <div className="flex flex-col gap-6 px-4 md:px-6 lg:px-12 items-center text-center md:text-left w-full h-full justify-center">
                 <motion.h2
-                    className="text-4xl font-bold text-blue-500"
+                    className="text-2xl md:text-4xl font-bold text-blue-500"
                     variants={fadeUp(0)}
                     initial="hidden"
                     whileInView="visible"
@@ -76,7 +76,7 @@ export default function AboutSection() {
                         </motion.p>
                     </div>
                     <motion.div 
-                        className="bg-slate-800 text-white rounded-4xl p-8 flex items-center flex-1 justify-center flex-col gap-8"
+                        className="bg-slate-800 text-white rounded-4xl p-4 md:p-8 flex items-center flex-1 justify-center flex-col gap-8"
                         variants={fadeUp(0.2)}
                         initial="hidden"
                         whileInView="visible"

@@ -5,6 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/lib/projects";
 import ProjectCard from "../ProjectCard";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.9, ease: "easeOut" }
+    },
+    exit: {
+        opacity: 0,
+        y: -20,
+        transition: { duration: 0.3 }
+    }
+};
+
 export default function ProjectsSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -19,10 +33,10 @@ export default function ProjectsSection() {
         >
             <motion.h2 
                 className="text-4xl font-bold text-blue-500 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
             >
                 Mis proyectos
             </motion.h2>
@@ -32,10 +46,10 @@ export default function ProjectsSection() {
                     <motion.div
                         key={currentIndex}
                         layout
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -100 }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
                         className="w-full"
                     >
                         <ProjectCard {...projects[currentIndex]} />
