@@ -61,7 +61,7 @@ export default function TechStackSection() {
     return (
         <section
             id="stack"
-            className="h-dvh snap-start px-4 py-8 flex flex-col items-center gap-6 overflow-hidden justify-center"
+            className="h-dvh snap-start px-4 py-8 flex flex-col items-center gap-6 overflow-hidden"
             style={{
                 backgroundColor: "#eff6ff",
                 backgroundImage: 'url("/paper-3.png")',
