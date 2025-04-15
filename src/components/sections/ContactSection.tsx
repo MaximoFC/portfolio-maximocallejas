@@ -3,6 +3,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.9, ease: "easeOut" }
+    },
+    exit: {
+        opacity: 0,
+        y: -20,
+        transition: { duration: 0.3 }
+    }
+};
+
 export default function ContactSection() {
     type ContactFormData = {
         name: string,
@@ -58,19 +72,19 @@ export default function ContactSection() {
         >
             <motion.h2 
                 className="text-4xl font-bold text-blue-500 mb-6 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}    
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}   
             >
                 Contacto
             </motion.h2>
             <motion.p 
                 className="text-center text-muted-foreground max-w-xl mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
             >
                 Siempre estoy interesado en nuevas oportunidades y emprender proyectos. Si te interesa trabajar o colaborar conmigo, 
                 podés contactarte a través de este formulario o por redes sociales
@@ -80,9 +94,13 @@ export default function ContactSection() {
                     ¡Gracias por tu mensaje! Te responderé pronto.
                 </p>
             ) : (
-                <form 
-                onSubmit={handleSubmit}
-                className="w-full max-w-md flex flex-col gap-4"
+                <motion.form 
+                    onSubmit={handleSubmit}
+                    className="w-full max-w-md flex flex-col gap-4"
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
                 >
                     <input 
                         type="text"
@@ -130,7 +148,7 @@ export default function ContactSection() {
                         >
                             {loading ? "Enviando..." : "Enviar"}
                     </button>
-                </form>
+                </motion.form>
             )}
             {error && (
                 <p className="text-red-500 text-sm text-center">{error}</p>

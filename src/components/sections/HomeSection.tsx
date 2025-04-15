@@ -21,11 +21,11 @@ export default function HomeSection() {
       <div className="w-full text-center flex flex-col items-center gap-6">
         <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
           <div className="p-4 md:p-8 w-full md:max-w-2xl">
-            <h1 className="text-5xl md:text-4xl font-bold text-blue-500">
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-500">
               Hola, soy <span className="text-black">Máximo</span>
             </h1>
             <TypeWriter />
-            <div className="flex justify-evenly pb-5">
+            <div className="flex justify-evenly pb-2 md:pb-5">
               <a href="https://linkedin.com/in/maximofcallejas" target="_blank" aria-label="LinkedIn">
                 <FaLinkedin className="text-blue-700 w-10 h-10 transition-all duration-150 hover:scale-110" />
               </a>
@@ -36,7 +36,7 @@ export default function HomeSection() {
                 <FaGithub className="text-gray-800 w-10 h-10 transition-all duration-150 hover:scale-110" />
               </a>
             </div>
-            <nav aria-label="Secciones principales" className="flex gap-4 justify-center mt-4 flex-wrap">
+            <nav aria-label="Secciones principales" className="flex gap-2 md:gap-4 justify-center mt-4 flex-wrap">
               <Link
                 href="#about"
                 aria-label="Sobre mi"

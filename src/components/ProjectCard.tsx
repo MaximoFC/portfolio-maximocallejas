@@ -30,6 +30,7 @@ export default function ProjectCard({ title, description, images, githubFrontend
                     className="object-cover object-top"
                     priority
                     fill
+                    sizes="(max-width: 1600px) 100vw, 50vw"
                 />
             </div>
             <div className="p-4 flex flex-col gap-2 bg-white border-t-1 border-blue-500">
