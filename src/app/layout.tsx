@@ -12,11 +12,11 @@ const rem = REM({
 export const metadata: Metadata = {
   title: "Máximo Facundo Callejas",
   description: "Desarrollador Web | Portfolio personal",
-  // metadataBase: new URL(""),
+  metadataBase: new URL("https://maximocallejas.vercel.app"),
   openGraph: {
     title: "Máximo Facundo Callejas",
     description: "Desarrollador Web | Portfolio personal",
-    // url: "",
+    url: "https://maximocallejas.vercel.app",
     siteName: "Máximo Callejas",
     images: [
       {
