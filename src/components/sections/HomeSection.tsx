@@ -36,7 +36,7 @@ export default function HomeSection() {
                 <FaGithub className="text-gray-800 w-10 h-10 transition-all duration-150 hover:scale-110" />
               </a>
             </div>
-            <div className="flex gap-4 justify-center mt-4 flex-wrap">
+            <nav aria-label="Secciones principales" className="flex gap-4 justify-center mt-4 flex-wrap">
               <Link
                 href="#about"
                 aria-label="Sobre mi"
@@ -58,7 +58,7 @@ export default function HomeSection() {
               >
                 Contactarme
               </Link>
-            </div>
+            </nav>
           </div>
           <div className="relative w-56 h-56 md:w-72 md:h-72 flex items-center justify-center">
             <div className="absolute inset-0 scale-135 z-0 pointer-events-none drop-shadow-lg">
@@ -107,13 +107,18 @@ export default function HomeSection() {
                 </g>
               </svg>
             </div>
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg z-10">
+            <div 
+              role="img" 
+              aria-label="Foto de perfil de Máximo Callejas" 
+              className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg z-10"
+            >
               <Image
                 src="/images/profile.jpg"
                 alt="Máximo Callejas"
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

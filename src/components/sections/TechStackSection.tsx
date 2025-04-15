@@ -75,6 +75,16 @@ export default function TechStackSection() {
             >
                 Stack Tecnológico
             </motion.h2>
+            <motion.p
+                className="text-muted-foreground text-lg max-w-2xl text-center"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+            >
+                Estas son las tecnologías y herramientas que utilizo regularmente en mis proyectos de desarrollo web, tanto en el
+                frontend como en el backend.
+            </motion.p>
             <div className="flex flex-wrap justify-center gap-4">
                 {categories.map((category) => (
                     <button
@@ -85,11 +95,21 @@ export default function TechStackSection() {
                                 ? "bg-white text-blue-500 px-6 py-2 rounded-lg border-2 border-blue-500 transition-all duration-150 hover:bg-gray-200 hover:scale-105"
                                 : "bg-blue-500 text-white px-6 py-2 rounded-lg transition-all duration-150 hover:bg-blue-600 hover:scale-105"
                             }`}
+                        aria-pressed={activeCategory === category}
+                        aria-label={`Mostrar tecnologías de ${category}`}
                     >
                         {category}
                     </button>
                 ))}
             </div>
+
+            <div className="sr-only">
+                <h3>Frontend</h3>
+                <h3>Backend</h3>
+                <h3>Database</h3>
+                <h3>Tools</h3>
+            </div>
+
             <div className="w-full max-w-4xl flex justify-center">
                 <AnimatePresence mode="wait">
                     <motion.ul
@@ -105,7 +125,9 @@ export default function TechStackSection() {
                                 key={index}
                                 className="flex items-center justify-center bg-white border border-blue-100 rounded-xl px-3 py-2 text-sm text-blue-500 shadow-sm text-center cursor-default"
                             >
-                                {iconMap[item]} {item}
+                                <span role="img" aria-label={item} className="flex items-center">
+                                    {iconMap[item]} {item}
+                                </span>
                             </li>
                         ))}
                     </motion.ul>
