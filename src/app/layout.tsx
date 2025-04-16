@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Máximo Callejas",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://maximocallejas.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Imagen destacada de Máximo Callejas",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Máximo Facundo Callejas",
     description: "Desarrollador Web | Portfolio personal",
-    images: ["/og-image.png"],
+    images: ["https://maximocallejas.vercel.app/og-image.png"],
     creator: "@maxi_callejas",
   },
   icons: {
