@@ -13,7 +13,7 @@ export const projects = [
         demo: "",
     },
     {
-        title: "MVP - Gestión de compra y venta de divisas",
+        title: "Gestión de compra y venta de divisas",
         description: "App web full stack con interfaz moderna que permite registrar y administrar transacciones de compra y venta de monedas extranjera (ARS, USD, EUR). Gestión automática de saldo, historial de movimientos sincronizado con Google Sheets. Desarrollada con el stack PERN (PostgreSQL - Express - React - Node.js)",
         images: [
             "/images/exchange-screenshot.png"
