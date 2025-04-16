@@ -37,7 +37,7 @@ export default function AboutSection() {
                 <div className="w-full flex flex-col md:flex-row justify-center gap-8">
                     <div className="flex-1 w-full">
                         <motion.p
-                            className="text-muted-foreground text-md leading-relaxed md:text-xl text-justify md:leading-loose"
+                            className="text-muted-foreground text-md leading-relaxed md:text-xl md:leading-loose"
                             variants={fadeUp(0.2)}
                             initial="hidden"
                             whileInView="visible"
@@ -46,7 +46,7 @@ export default function AboutSection() {
                             Soy Máximo Facundo Callejas, <strong>Programador Web Full Stack Jr.</strong>
                         </motion.p>
                         <motion.p
-                            className="text-muted-foreground text-md leading-relaxed md:text-xl text-justify md:leading-loose"
+                            className="text-muted-foreground text-md leading-relaxed md:text-xl md:leading-loose"
                             variants={fadeUp(0.2)}
                             initial="hidden"
                             whileInView="visible"
@@ -56,7 +56,7 @@ export default function AboutSection() {
                             mis conocimientos en <strong>Next.js</strong> y <strong>AWS</strong>.
                         </motion.p>
                         <motion.p
-                            className="text-muted-foreground text-md leading-relaxed md:text-xl text-justify md:leading-loose"
+                            className="text-muted-foreground text-md leading-relaxed md:text-xl md:leading-loose"
                             variants={fadeUp(0.2)}
                             initial="hidden"
                             whileInView="visible"
@@ -66,7 +66,7 @@ export default function AboutSection() {
                             en la <strong>Universidad Tecnológica Nacional - Facultad Regional Tucumán</strong>.
                         </motion.p>
                         <motion.p
-                            className="text-muted-foreground text-md leading-relaxed md:text-xl text-justify md:leading-loose"
+                            className="text-muted-foreground text-md leading-relaxed md:text-xl md:leading-loose"
                             variants={fadeUp(0.2)}
                             initial="hidden"
                             whileInView="visible"
@@ -83,7 +83,7 @@ export default function AboutSection() {
                         viewport={{ once: false, amount: 0.3 }}
                     >
                         <motion.p 
-                            className="text-md md:text-xl text-justify md:leading-loose"
+                            className="text-md md:text-xl md:leading-loose"
                             variants={fadeUp(0.2)}
                             initial="hidden"
                             whileInView="visible"
